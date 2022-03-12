@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --dir src",
+    "lint:fix": "eslint --fix 'components/**/{*.ts,*.tsx}'",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{ts,tsx,json,css}'"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.15",
@@ -21,6 +23,16 @@
     "@types/react": "^17.0.27",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.5.1",
     "typescript": "^4.4.3"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "printWidth": 100
   }
 }

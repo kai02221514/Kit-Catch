@@ -1,61 +1,60 @@
-import { useState } from "react";
-import { TimeTable } from "./TimeTable"
-import { TableForm } from "./TableForm";
-import { Header } from "../../../components/Header";
+import { useState } from 'react';
+import { Header } from '../../../components/Header';
+import { TableForm } from './TableForm';
+import { TimeTable } from './TimeTable';
 
 export function TableContainer() {
-
-  const [isOpen, setOpen] = useState<boolean>(false)
-  const [day, setDay] = useState<string>('')
-  const [time, setTime] = useState<number>(-1)
-  const [subject, setSubject] = useState<string>('')
-  const [description, setDescription] = useState<string>('')
-  const [teacher, setTeacher] = useState<string>('')
-  const [color, setColor] = useState('#dddd')
+  const [isOpen, setOpen] = useState<boolean>(false);
+  const [day, setDay] = useState<string>('');
+  const [time, setTime] = useState<number>(-1);
+  const [subject, setSubject] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
+  const [teacher, setTeacher] = useState<string>('');
+  const [color, setColor] = useState('#dddd');
   const [tableValue, setTableValue] = useState<{
-    monday: {subject: string, description: string, teacher: string, color: string}[],
-    tuesday: {subject: string, description: string, teacher: string, color: string}[],
-    wednesday: {subject: string, description: string, teacher: string, color: string}[],
-    thursday: {subject: string, description: string, teacher: string, color: string}[],
-    friday: {subject: string, description: string, teacher: string, color: string}[]
+    monday: { subject: string; description: string; teacher: string; color: string }[];
+    tuesday: { subject: string; description: string; teacher: string; color: string }[];
+    wednesday: { subject: string; description: string; teacher: string; color: string }[];
+    thursday: { subject: string; description: string; teacher: string; color: string }[];
+    friday: { subject: string; description: string; teacher: string; color: string }[];
   }>({
     monday: [
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
     ],
     tuesday: [
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
     ],
     wednesday: [
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
     ],
     thursday: [
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
     ],
     friday: [
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-      {subject: '', description: '', teacher: '', color: ''},
-    ]
-  })
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+      { subject: '', description: '', teacher: '', color: '' },
+    ],
+  });
 
   return (
     <>
-    <Header page={"時間割"} />
+      <Header page={'時間割'} />
       <TimeTable
-       color={color}
+        color={color}
         tableValue={tableValue}
         setDay={setDay}
         setTime={setTime}
@@ -81,6 +80,6 @@ export function TableContainer() {
         color={color}
         setColor={setColor}
       />
-      </>
-  )
+    </>
+  );
 }
