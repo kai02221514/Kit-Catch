@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -21,7 +22,7 @@ const MenuButtonContainer = styled.div<{ open: boolean }>`
   z-index: 3;
 `;
 
-const MenuButtonItem = styled.div`
+const MenuButtonItem = styled.a`
   &:hover {
     background-color: #abcbf3;
     cursor: pointer;
@@ -64,7 +65,13 @@ const Bar = styled.div<{ open: boolean }>`
 `;
 
 export function MenuButton() {
-  const items: string[] = ['時間割', '課題', '点数計算', 'LINE連携', '設定'];
+  const items = {
+    table: '時間割',
+    task: '課題',
+    point: '点数計算',
+    line: 'LINE連携',
+    setting: '設定',
+  };
   const [menu, setOpen] = useState<boolean>(false);
   const open = () => {
     if (menu) setOpen(false);
@@ -79,9 +86,10 @@ export function MenuButton() {
       </OpenButton>
       <BlackBack open={menu} />
       <MenuButtonContainer open={menu}>
-        {items.map((key) => (
-          // eslint-disable-next-line react/jsx-key
-          <MenuButtonItem>{key}</MenuButtonItem>
+        {Object.keys(items).map((item) => (
+          <Link key={item} href={item} passHref>
+            <MenuButtonItem>{items[item]}</MenuButtonItem>
+          </Link>
         ))}
       </MenuButtonContainer>
     </>
