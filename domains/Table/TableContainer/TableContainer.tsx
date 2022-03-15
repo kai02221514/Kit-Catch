@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Header } from '../../../components/Header';
 import { TableForm } from './TableForm';
 import { TimeTable } from './TimeTable';
 
@@ -52,7 +51,6 @@ export function TableContainer() {
 
   return (
     <>
-      <Header page={'時間割'} />
       <TimeTable
         color={color}
         tableValue={tableValue}
