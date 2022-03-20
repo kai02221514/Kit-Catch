@@ -19,7 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/_document.tsx",
-    "components/MenuButton/MenuButton.tsx"
+    "components/MenuButton/MenuButton.tsx",
+    "domains/Task/Task.tsx"
   ],
   "exclude": ["node_modules"]
 }
