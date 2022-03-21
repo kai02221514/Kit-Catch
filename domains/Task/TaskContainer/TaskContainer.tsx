@@ -1,9 +1,24 @@
 import React from 'react';
+import { TaskCard } from './TaskCard';
 
 export function TaskContainer() {
   return (
     <>
-      <div>task</div>
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
+    <TaskCard />
     </>
   );
 }
