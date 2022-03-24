@@ -119,7 +119,27 @@ const TagPlus = styled.button`
   margin-bottom: 2%;
   padding: 0.7%;
   :active {
-    background: #0400fa;
+    background-color: #0400fa;
+  }
+`;
+
+const Tag = styled.div`
+  display: table;
+  div {
+    background-color: #0395fa;
+    border-radius: 15px 0 0 15px;
+    float: left;
+    border-right: white solid 0.3px;
+    :before {
+      content: '×';
+    }
+  }
+  p {
+    margin-top: 0.05%;
+    border: gray solid 0.3px;
+    border-radius: 15px;
+    float: left;
+    margin-right: 2%;
   }
 `;
 
@@ -141,6 +161,17 @@ const Remarks = styled.textarea`
 
 export function TaskForm() {
   const [open, setOpen] = useState<boolean>(false);
+  const [tag, setTag] = useState<string>('');
+  const Tags: string[] = [
+    'mine',
+    'notdddddd',
+    'mine',
+    'notdddddd',
+    'mine',
+    'notdddddd',
+    'mine',
+    'notdddddd',
+  ];
   return (
     <>
       <BlackBack isOpen={open} />
@@ -153,9 +184,17 @@ export function TaskForm() {
         <ItemContainer>
           <TaskName placeholder='課題名' />
           <TagContainer>
-            <TagName placeholder='タグ名' />
-            <TagPlus>タグを追加</TagPlus>
+            <TagName placeholder='タグ名' id='Tag' onChange={(e) => setTag(e.target.value)} />
+            <TagPlus onClick={() => Tags.push(tag)}>タグを追加</TagPlus>
           </TagContainer>
+          <Tag>
+            {Tags.map((tag) => (
+              <p key={tag}>
+                <div />
+                {tag}
+              </p>
+            ))}
+          </Tag>
           <Remarks placeholder='自由メモ' />
         </ItemContainer>
       </FormContainer>
