@@ -8,7 +8,7 @@ const TaskCardContainer = styled.div`
   min-height: 120px;
   float: left;
   border: gray solid 0.5px;
-  border-radius: 16px;
+  border-radius: 9px;
   margin: 1%;
   overflow: scroll;
   animation-name: fadeUpAnime;
@@ -28,11 +28,10 @@ const TaskCardContainer = styled.div`
 `;
 
 const TaskTitle = styled.div`
+  color: #ffff;
   text-align: center;
   padding: 3%;
-  font-weight: bold;
-  background-color: #1580ce;
-  border-radius: 16px 16px 0px 0px;
+  background-color: #0395fa;
   border-bottom: gray solid 0.5px;
   margin-bottom: 2%;
 `;
@@ -54,43 +53,12 @@ export function TaskCard() {
   return (
     <>
       <TaskCardContainer>
-        <TaskTitle>pa</TaskTitle>
+        <TaskTitle>課題</TaskTitle>
         <Tags>PPAP</Tags>
         <Tags>Apple</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>PPAP</Tags>
-        <Tags>Apple</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>PPAP</Tags>
-        <Tags>Apple</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
-        <Tags>nu</Tags>
+        <Tags>PineApple</Tags>
+        <Tags>Pen</Tags>
+        <Tags>小坂大魔神</Tags>
       </TaskCardContainer>
     </>
   );
