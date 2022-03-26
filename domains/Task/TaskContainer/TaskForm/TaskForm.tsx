@@ -188,14 +188,23 @@ export function TaskForm() {
         <ItemContainer>
           <TaskName placeholder='課題名' />
           <TagContainer>
-            <TagName placeholder='タグ名' id='Tag' onChange={(e) => setTag(e.target.value)} />
-            <TagPlus onClick={() => Tags.push(tag)}>タグを追加</TagPlus>
+            <TagName id='tag' onChange={(e) => setTag(e.target.value)} placeholder='タグ名' />
+            <TagPlus
+              onClick={() => {
+                console.log(tag);
+                Tags.push(tag);
+                console.log(Tags);
+                let textForm = document.getElementById('tag');
+                textForm.value = '';
+              }}
+            >
+              タグを追加
+            </TagPlus>
           </TagContainer>
           <Tag>
             {Tags.map((tag) => (
               <li key={tag}>
-                <div />
-                {tag}
+                <div /> {tag}
               </li>
             ))}
           </Tag>
