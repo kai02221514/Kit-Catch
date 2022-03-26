@@ -123,19 +123,23 @@ const TagPlus = styled.button`
   }
 `;
 
-const Tag = styled.div`
+const Tag = styled.ul`
   display: table;
+  padding-left: 0;
   div {
     background-color: #0395fa;
     border-radius: 15px 0 0 15px;
     float: left;
     border-right: white solid 0.3px;
     :before {
+      float: left;
       content: '×';
     }
   }
-  p {
+  li {
+    list-style: none;
     margin-top: 0.05%;
+    margin-bottom: 2%;
     border: gray solid 0.3px;
     border-radius: 15px;
     float: left;
@@ -189,10 +193,10 @@ export function TaskForm() {
           </TagContainer>
           <Tag>
             {Tags.map((tag) => (
-              <p key={tag}>
+              <li key={tag}>
                 <div />
                 {tag}
-              </p>
+              </li>
             ))}
           </Tag>
           <Remarks placeholder='自由メモ' />
