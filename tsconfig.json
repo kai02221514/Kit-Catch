@@ -21,6 +21,6 @@
     "pages/_document.tsx",
     "components/MenuButton/MenuButton.tsx",
     "domains/Task/Task.tsx"
-, "domains/Task/TaskContainer/TaskCard/TaskCard.tsx", "domains/Task/TaskContainer/TaskForm/TaskForm.tsx"  ],
+, "domains/Task/TaskContainer/TaskCard/TaskCard.tsx", "domains/Task/TaskContainer/TaskForm/TaskForm.tsx", "domains/Task/TaskContainer/TaskContainer.tsx", "domains/Task/TaskContainer/TaskCard/index.ts"  ],
   "exclude": ["node_modules"]
 }

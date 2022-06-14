@@ -126,16 +126,6 @@ const TagPlus = styled.button`
 const Tag = styled.ul`
   display: table;
   padding-left: 0;
-  div {
-    background-color: #0395fa;
-    border-radius: 15px 0 0 15px;
-    float: left;
-    border-right: white solid 0.3px;
-    :before {
-      float: left;
-      content: '×';
-    }
-  }
   li {
     list-style: none;
     margin-top: 0.05%;
@@ -144,6 +134,12 @@ const Tag = styled.ul`
     border-radius: 15px;
     float: left;
     margin-right: 2%;
+    :before {
+      content: '×';
+      background-color: #0395fa;
+      border-radius: 100% 0 0 100%;
+      margin-right: 2px;
+    }
   }
 `;
 
@@ -166,16 +162,7 @@ const Remarks = styled.textarea`
 export function TaskForm() {
   const [open, setOpen] = useState<boolean>(false);
   const [tag, setTag] = useState<string>('');
-  const Tags: string[] = [
-    'mine',
-    'notdddddd',
-    'mine',
-    'notdddddd',
-    'mine',
-    'notdddddd',
-    'mine',
-    'notdddddd',
-  ];
+  let Tags = [];
   return (
     <>
       <BlackBack isOpen={open} />
@@ -183,29 +170,35 @@ export function TaskForm() {
       <FormContainer isOpen={open}>
         <HeadBar>
           <HeaderTitle>課題作成</HeaderTitle>
-          <SaveButton onClick={() => setOpen(false)}>作成</SaveButton>
+          <SaveButton
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            作成
+          </SaveButton>
         </HeadBar>
         <ItemContainer>
           <TaskName placeholder='課題名' />
           <TagContainer>
-            <TagName id='tag' onChange={(e) => setTag(e.target.value)} placeholder='タグ名' />
+            <TagName onChange={(e) => setTag(e.target.value)} placeholder='タグ名' />
             <TagPlus
               onClick={() => {
                 console.log(tag);
                 Tags.push(tag);
                 console.log(Tags);
-                let textForm = document.getElementById('tag');
-                textForm.value = '';
+                let textbox_element = document.getElementById('tag');
+                let new_element = document.createElement('li');
+                new_element.textContent = tag;
+                textbox_element.appendChild(new_element);
               }}
             >
               タグを追加
             </TagPlus>
           </TagContainer>
-          <Tag>
+          <Tag id='tag'>
             {Tags.map((tag) => (
-              <li key={tag}>
-                <div /> {tag}
-              </li>
+              <li key={tag}>{tag}</li>
             ))}
           </Tag>
           <Remarks placeholder='自由メモ' />
